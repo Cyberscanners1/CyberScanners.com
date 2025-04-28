@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyber Scanners, Sri Lanka’s premier cybersecurity team, offers advanced tools, services, and YouTube tutorials for ethical hacking and security testing.">
+    <meta name="keywords" content="cybersecurity, Sri Lanka, ethical hacking, vulnerability scanning, penetration testing, hacking tools, YouTube tutorials">
     <title>Cyber Scanners</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -68,7 +70,6 @@
                     <a href="#services" class="hover-neon">Services</a>
                     <a href="#tools" class="hover-neon">Tools</a>
                     <a href="#youtube" class="hover-neon">YouTube</a>
-                    <a href="#login" class="hover-neon">Login</a>
                     <a href="#contact" class="hover-neon">Contact</a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -85,7 +86,6 @@
             <a href="#services" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Services</a>
             <a href="#tools" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Tools</a>
             <a href="#youtube" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">YouTube</a>
-            <a href="#login" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Login</a>
             <a href="#contact" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Contact</a>
         </div>
     </nav>
@@ -230,42 +230,25 @@
         </div>
     </section>
 
-    <!-- Login Section -->
-    <section id="login" class="bg-black section-padding">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6 neon-glow">Login</h2>
-            <p class="text-lg max-w-2xl mx-auto mb-6">Access your Cyber Scanners account by entering your credentials.</p>
-            <div class="max-w-lg mx-auto">
-                <div class="mb-4">
-                    <input type="text" id="username" placeholder="Username" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500">
-                </div>
-                <div class="mb-4">
-                    <input type="password" id="password" placeholder="Password" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500">
-                </div>
-                <button id="login-btn" class="bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-6 rounded-full neon-glow">Login</button>
-                <p id="login-message" class="mt-4 text-sm text-red-400 hidden">Please enter a valid username and password.</p>
-                <p class="mt-4 text-sm">Note: This is a demo login page. Integrate a backend for secure authentication.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-900 section-padding">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6 neon-glow">Contact Us</h2>
             <p class="text-lg max-w-2xl mx-auto mb-6">Connect with Sri Lanka’s leading cybersecurity team. Send us a message!</p>
             <div class="max-w-lg mx-auto">
-                <div class="mb-4">
-                    <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" disabled>
-                </div>
-                <div class="mb-4">
-                    <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" disabled>
-                </div>
-                <div class="mb-4">
-                    <textarea placeholder="Your Message" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" rows="5" disabled></textarea>
-                </div>
-                <button class="bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-6 rounded-full neon-glow" disabled>Send Message</button>
-                <p class="mt-4 text-sm">Note: Contact form is disabled in this demo. Integrate a backend to enable it.</p>
+                <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="mb-4">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="_replyto" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-6 rounded-full neon-glow">Send Message</button>
+                </form>
+                <p class="mt-4 text-sm">Messages will be sent to our team’s email.</p>
             </div>
         </div>
     </section>
@@ -297,30 +280,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Login form validation (client-side demo)
-        const loginBtn = document.getElementById('login-btn');
-        const usernameInput = document.getElementById('username');
-        const passwordInput = document.getElementById('password');
-        const loginMessage = document.getElementById('login-message');
-
-        loginBtn.addEventListener('click', () => {
-            const username = usernameInput.value.trim();
-            const password = passwordInput.value.trim();
-
-            if (username === '' || password === '') {
-                loginMessage.classList.remove('hidden');
-                loginMessage.textContent = 'Please enter a valid username and password.';
-            } else {
-                loginMessage.classList.remove('hidden');
-                loginMessage.classList.remove('text-red-400');
-                loginMessage.classList.add('text-green-400');
-                loginMessage.textContent = 'Login successful! (Demo: Connect a backend)';
-                // For demo, reset fields
-                usernameInput.value = '';
-                passwordInput.value = '';
-            }
         });
     </script>
 </body>
