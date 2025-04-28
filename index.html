@@ -6,9 +6,10 @@
     <title>Cyber Scanners</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Share Tech Mono', monospace;
             background-color: #0a0a0a;
             color: #e0e0e0;
         }
@@ -41,8 +42,16 @@
         .pulse {
             animation: pulse 2s infinite;
         }
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end);
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
@@ -51,11 +60,14 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <h1 class="text-2xl font-bold neon-glow">Cyber Scanners</h1>
+                    <span class="ml-2 text-2xl">🇱🇰</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
                     <a href="#home" class="hover-neon">Home</a>
                     <a href="#about" class="hover-neon">About</a>
                     <a href="#services" class="hover-neon">Services</a>
+                    <a href="#tools" class="hover-neon">Tools</a>
+                    <a href="#login" class="hover-neon">Login</a>
                     <a href="#contact" class="hover-neon">Contact</a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -70,6 +82,8 @@
             <a href="#home" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Home</a>
             <a href="#about" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">About</a>
             <a href="#services" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Services</a>
+            <a href="#tools" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Tools</a>
+            <a href="#login" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Login</a>
             <a href="#contact" class="block px-4 py-2 hover:bg-green-800 hover:text-green-400">Contact</a>
         </div>
     </nav>
@@ -77,9 +91,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero-bg text-white text-center section-padding">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-glow pulse">Hack the Future with Cyber Scanners</h2>
-            <p class="text-lg mb-6">Sri Lanka’s elite cybersecurity crew delivering next-level protection against digital threats.</p>
-            <a href="#contact" class="bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-6 rounded-full neon-glow">Get Secured</a>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 neon-glow pulse">Secure the Future with Cyber Scanners</h2>
+            <p class="text-lg mb-6 typing">root@cyberscanners:~$ initialize_security_protocols...</p>
+            <p class="text-lg mb-6">Sri Lanka’s premier cybersecurity team, dedicated to protecting your digital assets from threats.</p>
+            <a href="#contact" class="bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-6 rounded-full neon-glow">Get Started</a>
         </div>
     </section>
 
@@ -87,8 +102,8 @@
     <section id="about" class="bg-gray-900 section-padding">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6 neon-glow">About Cyber Scanners</h2>
-            <p class="text-lg max-w-2xl mx-auto mb-4">Based in Sri Lanka, Cyber Scanners is a fearless team of cybersecurity experts with a passion for outsmarting hackers. We specialize in cutting-edge solutions to secure your digital world.</p>
-            <p class="text-lg max-w-2xl mx-auto">With a black hat mindset and white hat ethics, we protect businesses from the shadows of the internet.</p>
+            <p class="text-lg max-w-2xl mx-auto mb-4">Headquartered in Sri Lanka, Cyber Scanners is a team of cybersecurity experts committed to defending against digital threats. We deliver state-of-the-art solutions customized to your security requirements.</p>
+            <p class="text-lg max-w-2xl mx-auto">Combining a black hat mindset with white hat ethics, we ensure your business remains secure in an ever-evolving threat landscape.</p>
         </div>
     </section>
 
@@ -100,18 +115,124 @@
                 <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
                     <i class="fas fa-shield-alt text-green-500 text-4xl mb-4 pulse"></i>
                     <h3 class="text-xl font-semibold mb-2 text-green-400">Vulnerability Scanning</h3>
-                    <p>Uncover hidden weaknesses in your systems with our state-of-the-art scanning tech.</p>
+                    <p>Detect and mitigate security weaknesses in your websites and networks using our advanced scanning tools.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
                     <i class="fas fa-lock text-green-500 text-4xl mb-4 pulse"></i>
                     <h3 class="text-xl font-semibold mb-2 text-green-400">Penetration Testing</h3>
-                    <p>We hack your systems before the bad guys do, fortifying your defenses.</p>
+                    <p>Simulate real-world cyberattacks to fortify your defenses and improve security resilience.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
                     <i class="fas fa-cloud text-green-500 text-4xl mb-4 pulse"></i>
                     <h3 class="text-xl font-semibold mb-2 text-green-400">Cloud Security</h3>
-                    <p>Lock down your cloud with our elite security protocols.</p>
+                    <p>Safeguard your cloud infrastructure with comprehensive security assessments and monitoring.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="bg-gray-900 section-padding">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6 neon-glow">Our Hacking Tools</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-6">Discover our suite of tools available on GitHub, designed for ethical security testing and research purposes.</p>
+            <p class="text-lg max-w-2xl mx-auto mb-6 text-red-400">Disclaimer: These tools are intended for ethical hacking and authorized security assessments only. Unauthorized use is strictly prohibited.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">Termux Hacking Banner</h3>
+                    <p>A customization tool for the Termux terminal, allowing users to add black hat-style banners for an enhanced, hacker-inspired interface.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-banner.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">Termux Pkg-Tool</h3>
+                    <p>Streamlines package installation and management within Termux, enabling quick setup of essential hacking tools for security researchers.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-pkg-tool.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-IP-INFO</h3>
+                    <p>Extracts detailed information about IP addresses, including geolocation, country, city, and ISP details, for network reconnaissance.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-IP-INFO.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-Reverse-DNS</h3>
+                    <p>Performs reverse DNS lookups to resolve domain names from IP addresses, aiding in network security analysis and mapping.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-Reverse-DNS.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-Bulk-Domain</h3>
+                    <p>Analyzes large lists of domains to check their status and security configurations, ideal for bulk security assessments.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-Bulk-Domain.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-4
+                    00">CyberScanners-Server-Status</h3>
+                    <p>Checks the online/offline status of servers, providing critical insights for network monitoring and security evaluations.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-Server-Status.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-WAF-Checker</h3>
+                    <p>Identifies the presence of Web Application Firewalls (WAFs) on websites, helping assess web application security measures.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-WAF-Checker.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-WAF-Detector</h3>
+                    <p>An advanced tool for detecting WAFs, offering deeper analysis of web application security configurations.</p>
+                    <a href="https://github.com/cyberscanners/cyberscanners-WAF-Detector.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-WebAdmin-Cookies</h3>
+                    <p>Inspects cookies used in web admin logins to identify potential security vulnerabilities in web applications.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-WebAdmin-Cookies.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-Server-OnlineChecking</h3>
+                    <p>Verifies the live status of servers, ensuring network availability and supporting security testing workflows.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-Server-OnlineChecking.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-DDOS</h3>
+                    <p>Simulates Distributed Denial of Service (DDoS) attacks to test server resilience during security assessments.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-DDOS.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-DESKTOP-V1</h3>
+                    <p>Creates a desktop environment within Termux, enabling GUI-based security testing for enhanced usability.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-DESKTOP-V1.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-DESKTOP-V2-UBUNTU-OS</h3>
+                    <p>Installs an Ubuntu desktop environment in Termux, optimized for advanced security testing scenarios.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-DESKTOP-V2-UBUNTU-OS.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-Ubuntu-22.04-Minimal</h3>
+                    <p>Deploys a lightweight Ubuntu 22.04 environment in Termux, ideal for efficient, resource-conscious security testing.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-Ubuntu-22.04-Minimal.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-2 text-green-400">CyberScanners-UBUNTU-VPS-1</h3>
+                    <p>Sets up an Ubuntu environment on a Virtual Private Server (VPS), tailored for remote security testing operations.</p>
+                    <a href="https://github.com/cyberscanners/CyberScanners-UBUNTU-VPS-1.git" class="text-green-400 hover-neon">GitHub Repository</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="bg-black section-padding">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6 neon-glow">Login</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-6">Access your Cyber Scanners account by entering your credentials.</p>
+            <div class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <input type="text" id="username" placeholder="Username" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500">
+                </div>
+                <div class="mb-4">
+                    <input type="password" id="password" placeholder="Password" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500">
+                </div>
+                <button id="login-btn" class="bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-6 rounded-full neon-glow">Login</button>
+                <p id="login-message" class="mt-4 text-sm text-red-400 hidden">Please enter a valid username and password.</p>
+                <p class="mt-4 text-sm">Note: This is a demo login page. Integrate a backend for secure authentication.</p>
             </div>
         </div>
     </section>
@@ -120,7 +241,7 @@
     <section id="contact" class="bg-gray-900 section-padding">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6 neon-glow">Contact Us</h2>
-            <p class="text-lg max-w-2xl mx-auto mb-6">Join forces with Sri Lanka’s top cybersecurity team. Drop us a line!</p>
+            <p class="text-lg max-w-2xl mx-auto mb-6">Connect with Sri Lanka’s leading cybersecurity team. Send us a message!</p>
             <div class="max-w-lg mx-auto">
                 <div class="mb-4">
                     <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" disabled>
@@ -147,7 +268,6 @@
         // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
-
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -160,6 +280,30 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Login form validation (client-side demo)
+        const loginBtn = document.getElementById('login-btn');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginMessage = document.getElementById('login-message');
+
+        loginBtn.addEventListener('click', () => {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (username === '' || password === '') {
+                loginMessage.classList.remove('hidden');
+                loginMessage.textContent = 'Please enter a valid username and password.';
+            } else {
+                loginMessage.classList.remove('hidden');
+                loginMessage.classList.remove('text-red-400');
+                loginMessage.classList.add('text-green-400');
+                loginMessage.textContent = 'Login successful! (Demo: Connect a backend)';
+                // For demo, reset fields
+                usernameInput.value = '';
+                passwordInput.value = '';
+            }
         });
     </script>
 </body>
