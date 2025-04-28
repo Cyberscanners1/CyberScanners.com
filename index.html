@@ -236,7 +236,7 @@
             <h2 class="text-3xl font-bold mb-6 neon-glow">Contact Us</h2>
             <p class="text-lg max-w-2xl mx-auto mb-6">Connect with Sri Lanka’s leading cybersecurity team. Send us a message!</p>
             <div class="max-w-lg mx-auto">
-                <form action="https://formspree.io/f/your-form-id" method="POST">
+                <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
                     <div class="mb-4">
                         <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-800 text-white border border-green-500" required>
                     </div>
@@ -248,7 +248,8 @@
                     </div>
                     <button type="submit" class="bg-green-600 hover:bg-green-700 text-black font-semibold py-2 px-6 rounded-full neon-glow">Send Message</button>
                 </form>
-                <p class="mt-4 text-sm">Messages will be sent to our team’s email.</p>
+                <p id="contact-message" class="mt-4 text-sm text-green-400 hidden">Message sent successfully!</p>
+                <p id="contact-error" class="mt-4 text-sm text-red-400 hidden">Failed to send message. Please try again.</p>
             </div>
         </div>
     </section>
@@ -280,6 +281,37 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Contact form submission handling
+        const contactForm = document.getElementById('contact-form');
+        const contactMessage = document.getElementById('contact-message');
+        const contactError = document.getElementById('contact-error');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            contactMessage.classList.add('hidden');
+            contactError.classList.add('hidden');
+
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    contactMessage.classList.remove('hidden');
+                    contactForm.reset();
+                } else {
+                    contactError.classList.remove('hidden');
+                }
+            } catch (error) {
+                contactError.classList.remove('hidden');
+            }
         });
     </script>
 </body>
